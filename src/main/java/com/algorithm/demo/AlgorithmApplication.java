@@ -10,7 +10,7 @@ public class AlgorithmApplication {
     public static void main(String[] args) {
         SpringApplication.run(AlgorithmApplication.class, args);
 
-        int[] arr = {9,3,4,6,0,8,7,5,1,2};
+        int[] arr = {4,6,8,5,9};
         HeapSorting.sort(arr);
     }
 

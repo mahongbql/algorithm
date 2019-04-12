@@ -13,8 +13,7 @@ public class HeapSorting {
         }
 
         System.out.println();
-        System.out.print("第一个非叶子节点：" + arr[arr.length/2-1] + " ，下标为：" + (arr.length/2-1));
-        System.out.println();
+        System.out.println("第 1 个非叶子节点：" + arr[arr.length/2-1] + " ，下标为：" + (arr.length/2-1));
 
         //1.构建大顶堆
         for(int i=arr.length/2-1;i>=0;i--){
@@ -45,6 +44,7 @@ public class HeapSorting {
      * @param length
      */
     public static void adjustHeap(int []arr,int i,int length){
+
         //先取出当前元素i
         int temp = arr[i];
 
