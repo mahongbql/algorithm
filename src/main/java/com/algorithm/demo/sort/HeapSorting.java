@@ -1,12 +1,9 @@
 package com.algorithm.demo.sort;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @author mahongbin
  * @date 2019/4/12 10:44
  */
-@Slf4j
 public class HeapSorting {
 
     public static void sort(int []arr){
@@ -15,7 +12,9 @@ public class HeapSorting {
             System.out.print(arr[num] + " ");
         }
 
-        log.info("第一个非叶子节点：" + arr[arr.length/2-1] + " ，下标为：" + (arr.length/2-1));
+        System.out.println();
+        System.out.print("第一个非叶子节点：" + arr[arr.length/2-1] + " ，下标为：" + (arr.length/2-1));
+        System.out.println();
 
         //1.构建大顶堆
         for(int i=arr.length/2-1;i>=0;i--){
@@ -30,6 +29,11 @@ public class HeapSorting {
 
             //重新对堆进行调整
             adjustHeap(arr,0,j);
+
+            for(int num = 0; num < arr.length; num++) {
+                System.out.print(arr[num] + " ");
+            }
+            System.out.println();
         }
 
     }
