@@ -43,6 +43,8 @@ public class GreedyAlgorithm {
     }
 
     /**
+     * eg1.活动选择问题
+     *
      * 有n个需要在同一天使用同一个教室的活动a1,a2,…,an，教室同一时刻只能由一个活动使用。
      * 每个活动ai都有一个开始时间si和结束时间fi 。
      * 一旦被选择后，活动ai就占据半开时间区间[si,fi)。
@@ -53,10 +55,6 @@ public class GreedyAlgorithm {
         List<Active> bestActives = new ArrayList<Active>();
 
         actives.sort(null);
-
-        for (int i = 0; i < bestActives.size(); i++) {
-            System.out.println(bestActives.get(i));
-        }
 
         int nowTime = startTime;
 
@@ -77,5 +75,7 @@ public class GreedyAlgorithm {
 
         return bestActives;
     }
+
+
 
 }

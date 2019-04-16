@@ -32,6 +32,11 @@ class Active implements Comparable<Active>{
         return startTime;
     }
 
+    @Override
+    public String toString(){
+        return "Active [startTime = "+ startTime +" , endTime = " + endTime + " ]";
+    }
+
     /**
      * 按照结束时间升序，最早结束时间排在最前面
      * @param o
