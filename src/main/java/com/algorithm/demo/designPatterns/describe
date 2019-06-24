@@ -1,1 +1,2 @@
 1. Builder Pattern  建造者模式 -- 肯德基订餐
+2. Adapter Pattern  适配器模式 -- 我们有一个 MediaPlayer 接口和一个实现了 MediaPlayer 接口的实体类 AudioPlayer。默认情况下，AudioPlayer 可以播放 mp3 格式的音频文件
