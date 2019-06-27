@@ -3,7 +3,7 @@ package com.algorithm.demo.designPatterns.interpreterPattern;
 /**
  * @author mahongbin
  * @date 2019/6/26 17:20
- * @Description
+ * @Description 终结符表达式角色
  */
 public class Constant extends Expression {
     private int i ;
