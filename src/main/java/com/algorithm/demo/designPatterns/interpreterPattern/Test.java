@@ -16,8 +16,11 @@ public class Test {
     public static void main(String[] args){
         con = new Context();
         //设置变量、常量
+        //Variable元素是放在类似于 上下文（环境）中
         Variable a = new Variable();
         Variable b = new Variable();
+
+        //终结符表达式角色
         Constant c = new Constant(2);
         //为变量赋值
         con.addValue(a , 5);
