@@ -1,5 +1,8 @@
 package com.algorithm.demo.designPatterns.visitorPattern;
 
+import com.algorithm.demo.designPatterns.visitorPattern.student.XueZha;
+import com.algorithm.demo.designPatterns.visitorPattern.student.Xueba;
+
 /**
  * @author mahongbin
  * @date 2019/7/1 16:37
@@ -7,6 +10,6 @@ package com.algorithm.demo.designPatterns.visitorPattern;
  */
 public interface Visitor {
 
-    void visitXueBa(XueBa x);    // 访问学霸
+    void visitXueBa(Xueba x);    // 访问学霸
     void visitXueZha(XueZha x);    // 访问学渣
 }

@@ -8,11 +8,10 @@ import com.algorithm.demo.designPatterns.visitorPattern.Visitor;
  * @date 2019/7/1 16:46
  * @Description 学霸类
  */
-public class Xueba implements Student {
-
+public class Xueba extends Student {
 
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visitXueBa(this);
     }
 }
