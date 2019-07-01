@@ -2,3 +2,4 @@
 2. Adapter Pattern  适配器模式 -- 我们有一个 MediaPlayer 接口和一个实现了 MediaPlayer 接口的实体类 AudioPlayer。默认情况下，AudioPlayer 可以播放 mp3 格式的音频文件
 3. Interpreter Pattern 解释器模式 -- 客户端使用抽象命令如add代表加法等，内部实现一套解释机制如 客户端add(a, b) 内部就是 a + b
 4. Observer Pattern 观察者模式 -- 一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作
+5. Visitor Pattern 访问者模式 -- 一定要搞清楚固定的东西是什么，可能会变的东西是什么，才好理解访问者模式的思想
