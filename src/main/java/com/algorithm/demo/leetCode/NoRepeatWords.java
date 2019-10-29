@@ -32,7 +32,6 @@ public class NoRepeatWords {
                         maxNumber = number;
                         maxStr = temp;
                     }
-                    temp = null;
                     break;
                 }
                 //不相等
