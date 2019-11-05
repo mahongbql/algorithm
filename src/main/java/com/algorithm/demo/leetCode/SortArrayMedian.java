@@ -18,6 +18,16 @@ package com.algorithm.demo.leetCode;
  * nums2 = [3, 4]
  *
  * 中位数是 (2 + 3)/2 = 2.5
+ *
+ * 1
+ * 23456789
+ *
+ * 给点思路：
+ *  A 短的数组 | B 长的数组
+ *  i -> 相当于 短的中点
+ *  halfLen -> 相当于 A + B 的中点
+ *  j -> 相当于 A中点到A+B中点距离，类似于一个区间
+ *  j这个区间随着 i增大（i向正半轴的右边移动，j也会向正半轴左边移动同样距离）
  */
 public class SortArrayMedian {
     public static double findMedianSortedArrays(int[] A, int[] B) {
@@ -46,18 +56,23 @@ public class SortArrayMedian {
                 } else if (j == 0) {
                     maxLeft = A[i - 1];
                 } else {
+                    //A数组中的和B数组中的一样大，取较大的
                     maxLeft = Math.max(A[i - 1], B[j - 1]);
                 }
+
+                //奇数直接返回
                 if ((m + n) % 2 == 1) {
                     return maxLeft;
                 }
 
+                //A+B共有偶数个元素
                 int minRight = 0;
                 if (i == m) {
                     minRight = B[j];
                 } else if (j == n) {
                     minRight = A[i];
                 } else {
+                    //A数组中的和B数组中的一样大，取较小的
                     minRight = Math.min(B[j], A[i]);
                 }
                 return (maxLeft + minRight) / 2.0;
