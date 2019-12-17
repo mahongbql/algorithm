@@ -23,6 +23,11 @@ public class Palindrome {
         System.out.println(longestPalindrome(str));
     }
 
+    /**
+     * 最长回文数
+     * @param s
+     * @return
+     */
     public static String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {
@@ -37,12 +42,19 @@ public class Palindrome {
             int curLen = centerSpread(str, i);
             if (curLen > maxLen) {
                 maxLen = curLen;
+                // curLen 代表了最长回文字符串长度，里面包含了#，i代表当前下表，减去curLen就是开始的地方
                 start = (i - maxLen) / 2;
             }
         }
         return s.substring(start, start + maxLen);
     }
 
+    /**
+     * 中心扩散的最长位数
+     * @param s
+     * @param center
+     * @return
+     */
     private static int centerSpread(String s, int center) {
         // left = right 的时候，此时回文中心是一个空隙，回文串的长度是奇数
         // right = left + 1 的时候，此时回文中心是任意一个字符，回文串的长度是偶数
