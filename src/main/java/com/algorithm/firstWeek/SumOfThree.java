@@ -28,7 +28,7 @@ public class SumOfThree {
 
     public static void main(String[] args) {
         //排好序之后 {-4, -1, -1, 0, 1, 2}
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {0,0,0};
         List<List<Integer>> list = threeSum(nums);
         System.out.println(list);
     }
@@ -39,7 +39,7 @@ public class SumOfThree {
         //i = j + k   i,j,k
         for(int i = 0; i < nums.length - 2; i++) {
             //避免出现 nums[i] = nums[j] + nums[k] 与 nums[i+1] = nums[j] + nums[k] 重复
-            if(i != 0 && nums[i] == nums[i - 1]) {
+            if(i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
             int j = i + 1, k = nums.length - 1, target = 0 - nums[i];
