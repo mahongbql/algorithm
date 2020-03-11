@@ -54,6 +54,7 @@ public class RemoveDuplicates {
         int i = 0, diffIndex = 1;
         while(diffIndex < nums.length) {
             if(nums[i] != nums[diffIndex]) {
+                //先移动，后赋值，高
                 i++;
                 nums[i] = nums[diffIndex];
             }
