@@ -23,14 +23,33 @@ public class PlusOne {
 
     public static void main(String[] args) {
         int[] digits = {4,3,2,1};
-        System.out.println(plusOne(digits));
+
+//        System.out.println(plusOne(digits));
+        digits = myPlusOne(digits, 9);
+
+        for(int i = 0; i < digits.length; i++) {
+            System.out.print(digits[i]);
+        }
+
+        System.out.println();
     }
 
-    public static int[] plusOne(int[] digits) {
+    private static int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            digits[i]++;
+            digits[i] = digits[i] % 10;
+            if (digits[i] != 0) return digits;
+        }
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+
+    public static int[] myPlusOne(int[] digits, int n) {
         int up = 0, num;
         for(int i = digits.length - 1; i >= 0 ; i--) {
             if(i == digits.length - 1) {
-                num = digits[i] + 1;
+                num = digits[i] + n;
             } else {
                 num = digits[i] + up;
             }
