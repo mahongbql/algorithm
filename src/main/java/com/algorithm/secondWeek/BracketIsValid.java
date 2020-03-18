@@ -54,11 +54,11 @@ public class BracketIsValid {
         for(int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if(map.containsKey(c)) {
-                stack.push(c);
+                stack.push(map.get(c));
                 continue;
             }
 
-            if(stack.isEmpty() || map.get(stack.pop()) != c) {
+            if(stack.isEmpty() || stack.pop() != c) {
                 return false;
             }
         }
