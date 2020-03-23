@@ -42,9 +42,26 @@ public class MiddleNode {
         n5.next = n6;
 
         System.out.println(middleNode(n1).val);
+        System.out.println(myMiddleNode(n1).val);
     }
 
-    public static ListNode middleNode(ListNode head) {
+    private static ListNode middleNode(ListNode head) {
+        int n = 0;
+        ListNode cur = head;
+        while (cur != null) {
+            ++n;
+            cur = cur.next;
+        }
+        int k = 0;
+        cur = head;
+        while (k < n / 2) {
+            cur = cur.next;
+            k++;
+        }
+        return cur;
+    }
+
+    public static ListNode myMiddleNode(ListNode head) {
         if(head == null) {
             return head;
         }
@@ -66,6 +83,8 @@ public class MiddleNode {
 
         return node;
     }
+
+
 }
 
 class ListNode {
