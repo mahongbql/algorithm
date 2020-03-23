@@ -41,8 +41,20 @@ public class MiddleNode {
         n4.next = n5;
         n5.next = n6;
 
+        reverse(n1);
+
         System.out.println(middleNode(n1).val);
         System.out.println(myMiddleNode(n1).val);
+    }
+
+    private static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode temp = head.next;
+        ListNode newHead = reverse(head.next);
+        temp.next = head;
+        head.next = null;
+        return newHead;
     }
 
     private static ListNode middleNode(ListNode head) {
