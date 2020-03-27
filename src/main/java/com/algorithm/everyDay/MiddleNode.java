@@ -41,10 +41,14 @@ public class MiddleNode {
         n4.next = n5;
         n5.next = n6;
 
-        reverse(n1);
+        ListNode head = reverse(n1);
+        while(head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
 
-        System.out.println(middleNode(n1).val);
-        System.out.println(myMiddleNode(n1).val);
+//        System.out.println(middleNode(n1).val);
+//        System.out.println(myMiddleNode(n1).val);
     }
 
     private static ListNode reverse(ListNode head) {
