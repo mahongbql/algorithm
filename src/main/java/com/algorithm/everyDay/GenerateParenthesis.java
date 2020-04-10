@@ -26,26 +26,27 @@ public class GenerateParenthesis {
     }
 
     public static List<String> generateParenthesis(int n) {
-        List<String> ans = new ArrayList();
-        backtrack(ans, new StringBuilder(), 0, 0, n);
-        return ans;
+        List<String> list = new ArrayList<>();
+        fillParenthesis(n, list, 0, 0, new StringBuffer());
+        return list;
     }
 
-    public static void backtrack(List<String> ans, StringBuilder cur, int open, int close, int max){
-        if (cur.length() == max * 2) {
-            ans.add(cur.toString());
+    private static void fillParenthesis(int n, List<String> list, int open, int close, StringBuffer sb) {
+        if(sb.length() == n*2) {
+            list.add(sb.toString());
             return;
         }
 
-        if (open < max) {
-            cur.append('(');
-            backtrack(ans, cur, open+1, close, max);
-            cur.deleteCharAt(cur.length() - 1);
+        if(open < n) {
+            sb.append("(");
+            fillParenthesis(n, list, open+1, close, sb);
+            sb.deleteCharAt(sb.length()-1);
         }
-        if (close < open) {
-            cur.append(')');
-            backtrack(ans, cur, open, close+1, max);
-            cur.deleteCharAt(cur.length() - 1);
+
+        if(close < open) {
+            sb.append(")");
+            fillParenthesis(n, list, open, close+1, sb);
+            sb.deleteCharAt(sb.length()-1);
         }
     }
 }
