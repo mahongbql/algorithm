@@ -20,31 +20,29 @@ package com.algorithm.interview;
 public class Jump {
 
     public static void main(String[] args) {
-        int[] nums = {2,3,1,1,4};
-        System.out.println(jump(nums));
+        int[] nums = {1,1,2,2,0,1,1};
+        System.out.println(canJump(nums));
     }
 
-    public static int jump(int[] nums) {
-        return find(0, nums, 0);
+    public static boolean canJump(int[] nums) {
+        if(nums.length < 1) {
+            return false;
+        }
+        return find(0, nums);
     }
 
-    public static int find(int cur, int[] nums, int step) {
+    public static boolean find(int cur, int[] nums) {
         if(cur >= nums.length-1) {
-            return step;
+            return true;
         }
 
-        int num = nums[cur];
-        int max_num = 0;
-        int max_index = 0;
-        for(int i = cur+1; i < cur+num+1; i++) {
-            if(nums[i] > max_num) {
-                max_num = nums[i];
-                max_index = i;
+        int jump = Math.min(nums[cur] + cur, nums.length - 1);
+        for(int i = cur+1; i <= jump; i++) {
+            if(find(cur, nums)) {
+                return true;
             }
         }
 
-        cur = max_index;
-
-        return find(cur, nums, step+1);
+        return false;
     }
 }
