@@ -1,4 +1,4 @@
-package com.mahongbin.subject;
+package com.algorithm.subject;
 
 import java.util.*;
 

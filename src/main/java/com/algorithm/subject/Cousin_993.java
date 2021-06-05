@@ -1,7 +1,7 @@
-package com.mahongbin.subject;
+package com.algorithm.subject;
 
-import com.mahongbin.bean.BinaryTree;
-import com.mahongbin.bean.TreeNode;
+import com.algorithm.bean.BinaryTree;
+import com.algorithm.bean.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

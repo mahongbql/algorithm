@@ -1,4 +1,4 @@
-package com.mahongbin.bean;
+package com.algorithm.bean;
 
 public class BinaryTree {
 
