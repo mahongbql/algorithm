@@ -3,7 +3,7 @@ package com.algorithm.subject;
 import java.util.*;
 
 /**
- * 单词重复的前 n 个
+ * 前k歌高频单词
  *
  * ["arr", "length", "arr", "ok", "ok", "ok"]
  * n = 2
@@ -12,7 +12,7 @@ import java.util.*;
  *
  *
  */
-public class RepeatWords_ {
+public class RepeatWords_692 {
 
     public static void main(String[] args) {
         String[] arr = {"arr", "length", "arr", "ok", "ok", "ok"};
