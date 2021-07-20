@@ -13,7 +13,7 @@ package com.algorithm.subject;
  * 采用投票算法
  *
  */
-public class mainElement_17_10 {
+public class MainElement_17_10 {
 
     public static void main(String[] args) {
         int[] nums = {3,2};
