@@ -47,13 +47,11 @@ import com.algorithm.bean.ListNode;
 public class TwoLinkedListPublicNode {
 
     public static void main(String[] args) {
-        ListNode headA_1 = new ListNode(1);
         ListNode headA_2 = new ListNode(8);
         ListNode headA_3 = new ListNode(4);
         ListNode headA_4 = new ListNode(5);
-        ListNode headA = new ListNode(4);
-        headA.next = headA_1;
-        headA_1.next = headA_2;
+        ListNode headA = new ListNode(1);
+        headA.next = headA_2;
         headA_2.next = headA_3;
         headA_3.next = headA_4;
 
