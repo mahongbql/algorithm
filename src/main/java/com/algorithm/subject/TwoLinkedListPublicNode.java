@@ -71,7 +71,7 @@ public class TwoLinkedListPublicNode {
             return null;
         }
         ListNode pA = headA, pB = headB;
-        while (pA != pB) {
+         while (pA != pB) {
             pA = pA.next == null ? headB : pA.next;
             pB = pB.next == null ? headA : pB.next;
         }
