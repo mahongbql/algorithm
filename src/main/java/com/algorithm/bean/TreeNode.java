@@ -2,7 +2,7 @@ package com.algorithm.bean;
 
 public class TreeNode {
 
-    public TreeNode(TreeNode leftNode, TreeNode rightNode, int val) {
+    public TreeNode(TreeNode leftNode, TreeNode rightNode, Integer val) {
         this.leftNode = leftNode;
         this.rightNode = rightNode;
         this.val = val;
@@ -12,7 +12,7 @@ public class TreeNode {
 
     private TreeNode rightNode;
 
-    private int val;
+    private Integer val;
 
     public TreeNode getLeftNode() {
         return leftNode;
@@ -30,11 +30,11 @@ public class TreeNode {
         this.rightNode = rightNode;
     }
 
-    public int getVal() {
+    public Integer getVal() {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(Integer val) {
         this.val = val;
     }
 }
