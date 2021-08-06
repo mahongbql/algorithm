@@ -17,33 +17,45 @@ public class NetDelay_743 {
     }
 
     public static int networkDelayTime(int[][] times, int n, int k) {
-        int workDelayTime = 0;
-        Map<Integer, List<int[]>> map = new HashMap<>();
+        Map<Integer, List<Integer[]>> map = new HashMap<>();
         for(int[] time : times) {
-            int start = time[0];
-            int end = time[1];
-            int delay = time[2];
-
-            List<int[]> list = map.getOrDefault(start, new ArrayList<>());
-            int[] arr = {end, delay};
-            list.add(arr);
-
-            map.put(start, list);
+            List<Integer[]> list = map.getOrDefault(time[0], new ArrayList<>());
+            Integer[] ints = {time[1], time[2]};
+            list.add(ints);
+            map.put(time[0], list);
         }
 
-        List<int[]> list = map.get(k);
-        if(null == list) return -1;
+        int[] distance = new int[n+1];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        distance[k] = 0;
 
-        int max = 0;
-        for(int[] arr : list) {
-            workDelayTime = 0;
-            int next = arr[0];
-            int delay = arr[1];
+        boolean[] visted = new boolean[n+1];
 
-            workDelayTime += delay;
-            max = Math.max(max, workDelayTime);
+        while(true) {
+            int minValue = Integer.MAX_VALUE;
+            int minIndex = -1;
+            for(int i = 1; i <= n; i++) {
+                if(!visted[i] && distance[i] < minValue) {
+                    minValue = distance[i];
+                    minIndex = i;
+                }
+            }
+
+            if(minIndex == -1) break;
+            visted[minIndex] = true;
+
+            for(int i = 1; i <= n; i++) {
+                if(map.containsKey(minIndex))
+                    for(Integer[] ints : map.get(minIndex))
+                        distance[ints[0]] = Math.min(distance[ints[0]], minValue + ints[1]);
+            }
         }
 
-        return workDelayTime;
+        int maxValue = 0;
+        for(int i = 1; i <= n; i++) {
+            if(distance[i] == Integer.MAX_VALUE) return -1;
+            maxValue = Math.max(distance[i], maxValue);
+        }
+        return maxValue;
     }
 }
